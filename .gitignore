@@ -4,3 +4,4 @@ FMS_server.egg-info
 .idea
 venv
 
+*.pyc
