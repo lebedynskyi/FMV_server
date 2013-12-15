@@ -28,7 +28,6 @@ def init_logger(config_path):
     try:
         _init_logger_from_path(config_path)
     except BaseException:
-        print("Cannot init logger with config %s" % config_path)
         _init_default_logger()
 
 
@@ -37,7 +36,6 @@ def _init_logger_from_path(path):
 
 
 def _init_default_logger():
-    print("Initialization of default logger")
     # create logger
     logger = logging.getLogger()
     logger.setLevel(logging.DEBUG)

@@ -26,14 +26,15 @@ from fms.server.exceptions import BaseFMSException, InnerServerError
 
 class WrappedFlask(Flask):
     def run(self, host=None, port=None, debug=None, **options):
-        log_utils.init_logger("*")
         super(WrappedFlask, self).run(host, port, debug, **options)
 
+        log_utils.init_logger("*")
+        LOG.warning("Logger configured")
 
-LOG = logging.getLogger(__name__)
+
+LOG = logging.getLogger()
 app = WrappedFlask(__name__)
 
-LOG.warning("FMS SERVER BY Vetalll")
 
 @app.route("/test")
 def test():
@@ -63,3 +64,7 @@ def safe_handle(handler, args):
         if not isinstance(e, BaseFMSException):
             LOG.exception(e)
         return json_utils.to_json("error", InnerServerError(e.message))
+
+
+def start():
+    pass
