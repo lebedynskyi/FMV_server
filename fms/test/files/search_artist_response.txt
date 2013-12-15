@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js lastfm" data-ad-zone="search:search:overview">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge; chrome=1" />
+    <link rel="profile" href="http://purl.org/uF/2008/03/" />
+        <!–[if IE]><![endif]–>
+
+                <title>Search – Last.fm</title>    
+        
+        <script>(function(e) { e.className = e.className.replace(/\bno-js\b/,'js'); })(document.documentElement)</script>
+
+    <link rel="search" type="application/opensearchdescription+xml" href="http://cdn.last.fm/opensearch.xml" title="Last.fm" />
+            <meta name="description" content="The world’s largest online music catalogue, powered by your scrobbles. Videos, photos, stats, charts, biographies and concerts."/>
+
+
+            <meta name="robots" content="NOODP" />
+
+        
+                <meta property="og:site_name" content="Last.fm" />
+<meta property="fb:app_id" content="192959324047861" />
+
+    <meta property="og:image" content="http://cdn.last.fm/flatness/logo_opengraph.jpg" />    
+                <link rel="shortcut icon" href="http://cdn.last.fm/flatness/favicon.2.ico" />
+        <link rel="apple-touch-icon" href="http://cdn.last.fm/flatness/apple-touch-icon.png" />
+    
+        <meta name="msapplication-TileImage" content="http://cdn.last.fm/flatness/lastfm_win8_tile_144.png" />
+    <meta name="msapplication-TileColor" content="#d51007" />
+    
+        <meta name="apple-itunes-app" content="app-id=585235199">
+
+    
+    
+    
+            
+            <link rel="alternate" hreflang="de" href="http://www.lastfm.de/search?q=Rammstein&amp;type=artist" />
+                <link rel="alternate" hreflang="es" href="http://www.lastfm.es/search?q=Rammstein&amp;type=artist" />
+                <link rel="alternate" hreflang="fr" href="http://www.lastfm.fr/search?q=Rammstein&amp;type=artist" />
+                <link rel="alternate" hreflang="it" href="http://www.lastfm.it/search?q=Rammstein&amp;type=artist" />
+                <link rel="alternate" hreflang="ja" href="http://www.lastfm.jp/search?q=Rammstein&amp;type=artist" />
+                <link rel="alternate" hreflang="pl" href="http://www.lastfm.pl/search?q=Rammstein&amp;type=artist" />
+                <link rel="alternate" hreflang="pt" href="http://www.lastfm.com.br/search?q=Rammstein&amp;type=artist" />
+                <link rel="alternate" hreflang="ru" href="http://www.lastfm.ru/search?q=Rammstein&amp;type=artist" />
+                <link rel="alternate" hreflang="sv" href="http://www.lastfm.se/search?q=Rammstein&amp;type=artist" />
+                <link rel="alternate" hreflang="tr" href="http://www.lastfm.com.tr/search?q=Rammstein&amp;type=artist" />
+                <link rel="alternate" hreflang="zh" href="http://cn.last.fm/search?q=Rammstein&amp;type=artist" />
+        
+    
+        <style>html {zoom: 1;}</style>    <script>
+
+        if(top !== self && top.location.domain !== self.location.domain) {
+            (function(d, s) {
+                if(s && s.insertRule) {
+                    s.insertRule('body { display: none !important }', 0);
+                } else if(s && s.addRule) {
+                    s.addRule('body', 'display: none !important');
+                }
+                top.location.replace(d.location.href);
+            })(document, document.styleSheets[0]);
+        }
+</script>
+
+                                        <link rel="stylesheet" href="http://cdn.last.fm/css/css/228811/search/overview.css" />
+                            <link rel="stylesheet" href="http://cdn.last.fm/css/css/228811/master.css" />
+                        
+        
+<!--[if lt IE 9]>
+    <script>
+
+        window.html5 = {
+            shivCSS: false
+        }
+</script>
+    <script src="http://cdn.last.fm/javascript/javascript/229047/lib/html5shiv.js"></script>
+<![endif]-->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>$.noConflict();</script>
+<script src="//ajax.googleapis.com/ajax/libs/prototype/1.7.1.0/prototype.js"></script>
+<script>
+    if(typeof Prototype === 'undefined') {
+        document.write(unescape("%3Cscript src='http://cdn.last.fm/javascript/javascript/229047/lib/prototype.js'%3E%3C/script%3E"));
+    }
+</script>
+<script src="//ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/scriptaculous.js"></script>
+<script>
+    if(typeof Scriptaculous === 'undefined') {
+        document.write(unescape("%3Cscript src='http://cdn.last.fm/javascript/javascript/229047/lib/scriptaculous/scriptaculous.js'%3E%3C/script%3E"));
+    }
+</script>
+<script src="http://cdn.last.fm/javascript/javascript/229047/lib/mustache-min.js"></script>
+
+<script>SM2_DEFER = true;</script>
+<script src="http://cdn.last.fm/javascript/javascript/229047/lib/sm2-min.js"></script>
+
+<script src="http://cdn.last.fm/javascript/javascript/229047/LFM.js"></script>
+
+<script>
+    LFM.Adserver.showAds = true;
+    LFM.set("Session", {"cookieHost":".last.fm","host":"www.last.fm","staticHost":"http:\/\/cdn.last.fm","wsHost":"ws.audioscrobbler.com","userserveHost":"http:\/\/userserve-ak.last.fm","wsKey":"ceec2bb03d4c5929f0d6667fc266dc75","formtoken":"2bcd67b944b9e63a7fd1b2c0c95a8d55947c66b3","location":"ua","language":"en","ajaxhost":"ajax.last.fm","templatePath":"\/templates\/228055","jsPath":"http:\/\/cdn.last.fm\/javascript\/javascript\/229047","cssPath":"http:\/\/cdn.last.fm\/css\/css\/228811","loggedIn":false});
+    LFM.set("resTypes", {
+        EVENT: 29,
+        ARTIST: 6,
+        ALBUM: 8,
+        TRACK: 9,
+        GROUP: 20,
+        TAG: 32,
+        USER: 4,
+        LABEL: 10
+    });
+    LFM.set("resTypeLookup", {
+        29: "Event",
+        6: "Artist",
+        8: "Album",
+        9: "Track",
+        20: "Group",
+        32: "Tag",
+        4: "User",
+        10: "Label"
+    });
+
+    LFM.set("String", {okText: "OK",cancelText: "Cancel",clickToEditText: "Click to edit",savingText: "Saving…",loadingText: "Loading…",deletingText: "Deleting…",thereWasAnError: "There was an error.",dialogLoadError: "There was an error loading this dialog.",fileTooBig: "Sorry, the file is too big.",noFile: "Please choose a file.",uploadCancelled: "Upload Cancelled.",deleteMessageTitle: "Delete Message",deleteMessagePrompt: "Are you sure you want to delete this message?",deleteFriendPrompt: "Are you sure you want to delete this friend?",deleteImage: "Are you sure you want to delete this image?",deleteButtonText: "Delete",done: "Done",backText: "Back",yesText: "Yes",noText: "No",saveText: "Save",saveTitle: "Add to profile",sendText: "Send",sendTitle: "Share with friends",addTitle: "Add to library",tagTitle: "Add tags",playlistTitle: "Add to playlist",befriendTitle: "Add a friend",labsfeedbackTitle: "Give us your feedback",joinTitle: "Join this group",loved: "Loved",RemoveFromLibraryTitle: "Remove from library",uploadImageTitle: "Upload Image",uploadVideoTitle: "Upload Video",usernoteTitle: "Add a note",cleanupBioTitle: "Cleanup Bio",flageventTitle: "Flag for review",setLocationTitle: "Set your Location",newWindowTooltip: "This link will open in a new window",unloadWarningMessage: "This will stop Radio Playback",trackLoved: "You loved this track",playbackStopped: "Playback stopped",loadingTrackInfo: "Loading track information",errorLoadingTrackInfo: "Error loading track information",emailLineup: "Email this",uploadMessages: {mayTakeLonger: "Sorry, this may take slightly longer than usual. Hold on a couple of seconds.",uploading: "Uploading…",endUploading: "Done",progressDisplay: "PERCENTUPLOADED% complete (TRANSFERRATE kb/s) – TIMEREMAINING seconds remaining",progressComplete: "100% complete",failedRetrying: "Failed retrying upload, bailed.",processingMedia: "Processing media…",unsupportedFormat: "Sorry, the file you uploaded isn’t encoded in a supported format. Please try again.",uploadError: "There was an error uploading your video, please verify that the file you are uploading is not too large or of an incorrect format and try again."},shortMonths: {'1': "Jan",'2': "Feb",'3': "Mar",'4': "Apr",'5': "May",'6': "Jun",'7': "Jul",'8': "Aug",'9': "Sep",'10': "Oct",'11': "Nov",'12': "Dec"},resTypePlural: {29: "Events",6: "Artists",8: "Albums",9: "Tracks",20: "Groups",32: "Tags",4: "Users","friends":   "Friends",10: "Labels"}});LFM.set("Element", {icon_loved_indicator: "<img class=\"icon loved_indicator_icon\" width=\"11\" height=\"9\" src=\"http:\/\/cdn.last.fm\/flatness\/clear.gif\" style=\"\" \/>",icon_tag: "<img class=\"icon tag_icon\" width=\"14\" height=\"14\" src=\"http:\/\/cdn.last.fm\/flatness\/clear.gif\" style=\"\" \/>",icon_dismiss: "<img class=\"icon dismiss_icon\" width=\"16\" height=\"16\" src=\"http:\/\/cdn.last.fm\/flatness\/clear.gif\" style=\"\" \/>",icon_play: "<img class=\"transparent_png play_icon\" width=\"13\" height=\"13\" alt=\"Play\" src=\"http:\/\/cdn.last.fm\/flatness\/preview\/play_indicator.png\" style=\"\" \/>"});
+        LFM.AdPlacements = ["beacon","interstitial","skin","leaderboard","customsearch","mpu","lowerleaderboard"];
+</script>
+
+
+<script data-main="http://cdn.last.fm/javascript/javascript/229047/modules-built/init" src="http://cdn.last.fm/javascript/javascript/229047/lib/requirejs/require-min.js"></script>
+
+    <script src="http://cdn.last.fm/javascript/javascript/229047/components.js"></script>
+    <script src="http://cdn.last.fm/javascript/javascript/229047/dialog.js"></script>
+    <script src="http://cdn.last.fm/javascript/javascript/229047/form/typeahead.js"></script>
+
+<script>
+
+LFM.Page.Tracker = new LFM.Analytics.Tracker('Search/Overview/', window.location.host);
+
+document.observe('dom:loaded', function() {
+
+    LFM.Page.Tracker.bindOutboundLinkListener();
+    LFM.Page.Tracker.bindEventListener();
+
+});
+
+</script>
+
+
+    
+    <script>document.observe("dom:loaded", function () { if (typeof ieHover !== 'undefined') ieHover.setUp(); });</script>
+
+    <script data-require="googleanalytics">LFM.Analytics = LFM.Analytics || {};LFM.Analytics.Helpers = {webhost:"www.last.fm",registrationStatus:"LoggedOut",visitorStatus: "Anonymous",transformedUrl:"search/overview/?q=Rammstein&type=artist"}</script></head>
+
+
+
+<!--[if lt IE 7 ]> <body class="a-overview lang-en theme-flatness ie ie6"> <![endif]-->
+<!--[if IE 7 ]>    <body class="a-overview lang-en theme-flatness ie ie7"> <![endif]-->
+<!--[if IE 8 ]>    <body class="a-overview lang-en theme-flatness ie ie8"> <![endif]-->
+<!--[if IE 9 ]>    <body class="a-overview lang-en theme-flatness ie ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <body class="a-overview lang-en theme-flatness" > <!--<![endif]-->
+
+        <script>var WRInitTime = +new Date();</script>
+
+    
+            <div id="page" class="            ">
+            <div class="fixed ">
+
+                                
+
+<div id="LastAd_beacon" class="LastAd ad-beacon inactive" data-require="ads/staticadslot" data-ad-static data-ad-placement="beacon" data-ad-collapsible>
+    <span>     
+            <script>
+
+
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+
+(function() {
+    var useSSL = 'https:' == document.location.protocol;
+    var src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+    document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+})();
+
+</script>
+
+<script>
+    
+    var googleSlots = { };
+    var googleDisplayed = false;
+    
+
+    googletag.cmd.push(function() {
+        var unitName = "/8264/row-lastfm/search/search/overview",
+            isVR = false,
+            isDynamic = false,
+            isAnonHome = false,
+            isImagePage = false;
+    
+
+    function hasPlacement(placement) {
+        return LFM.AdPlacements.indexOf(placement) >= 0;
+    };
+
+    var leaderboardSizes = [[728,90],[970,66],[970,90],[860,55]];
+    if ( ! isImagePage) {
+        leaderboardSizes.push([880,150],[880,170],[880,200],[900,150],[900,250],[970,200],[970,250],[860,250],[980,250]);
+    }
+    if (hasPlacement('leaderboard')) {
+        googleSlots['leader_top'] = googletag.defineSlot(unitName, leaderboardSizes, "leader_top")
+        .addService(googletag.pubads())
+        .setTargeting("pos", "top");
+    }
+
+    var mpuSizes = [[300,250],[138,108]] ;
+    if (! isAnonHome) {
+        mpuSizes.push([300,600]);
+    }
+
+    if (hasPlacement('mpu')) {
+        googleSlots['mpu_top'] = googletag.defineSlot(unitName, mpuSizes, "mpu_top")
+        .addService(googletag.pubads())
+        .setTargeting("pos", "top");
+    }
+
+    if (hasPlacement('lowermpu')) {
+        googleSlots['mpu_bottom'] = googletag.defineSlot(unitName, mpuSizes, "mpu_bottom")
+        .addService(googletag.pubads())
+        .setTargeting("pos", "bottom");
+    }
+
+    if (hasPlacement('skin')) {
+        googleSlots['skin'] = googletag.defineSlot(unitName, [1600,1000], "skin")
+        .addService(googletag.pubads())
+        .setTargeting("pos", "top");
+    }
+
+    if (hasPlacement('interstitial')) {
+        googleSlots['intromercial'] = googletag.defineOutOfPageSlot(unitName, "intromercial")
+        .addService(googletag.pubads());
+    }
+
+    if (hasPlacement('lowerleaderboard')) {
+        googleSlots['leader_bottom'] = googletag.defineSlot(unitName, leaderboardSizes, "leader_bottom")
+        .addService(googletag.pubads())
+        .setTargeting("pos", "bottom");
+    }
+
+    if (hasPlacement('sky')) {
+        googleSlots['sky_top'] = googletag.defineSlot(unitName, [160,600], "sky_top")
+        .addService(googletag.pubads())
+        .setTargeting("pos", "top");
+    }
+
+    // Collapse as soon as display() for the slot is reached and expand only when there is an ad
+    // i.e. no flickering
+    googletag.pubads().collapseEmptyDivs(true);
+
+    if ( ! isVR) {
+        googletag.pubads().enableSingleRequest();    
+
+        if ( ! isDynamic) {
+            googletag.pubads().enableSyncRendering();    
+        }
+    }
+
+    if (screen.width >= 1280) {
+        googletag.pubads().setTargeting("inskin", "yes");
+    }
+
+    
+
+            googletag.pubads().setTargeting("geo", "UA");
+            googletag.pubads().setTargeting("lang", "en");
+    
+    googletag.enableServices();
+    
+
+  });
+
+</script>        
+    </span>
+</div>
+    <div id="LastAd_interstitial" class="LastAd ad-interstitial inactive" data-require="ads/staticadslot" data-ad-static data-ad-placement="interstitial" data-ad-collapsible>
+    <span>     
+            <div id="intromercial">
+    <script>
+        googletag.cmd.push(function() {
+            googletag.display("intromercial"); 
+        });
+    </script>
+</div>        
+    </span>
+</div>    <div id="LastAd_skin" class="LastAd ad-skin inactive" data-require="ads/staticadslot" data-ad-static data-ad-placement="skin" data-ad-collapsible>
+    <span>     
+            <div id="skin">
+    <script>
+        googletag.cmd.push(function() {
+            googletag.display("skin"); 
+        });
+    </script>
+</div>        
+    </span>
+</div>
+    <div id="LastAd_leaderboard" class="LastAd ad-leaderboard inactive" data-require="ads/staticadslot" data-ad-static data-ad-placement="leaderboard" data-ad-collapsible>
+    <span>     
+            <div id="leader_top">
+    <script>
+        googletag.cmd.push(function() {
+            googletag.display("leader_top"); 
+        });
+    </script>
+</div>        
+    </span>
+</div>
+<div class="masthead-wrapper">
+
+    
+    
+                
+    <header class="masthead" role="banner">
+        <h1>
+            <a href="/" class="ir lastfm-logo">
+                Last.fm
+            </a>
+        </h1>
+
+        <form class="site-search" method="get" action="/search" class="search-autocomplete" role="search" data-require="search/sitesearch" data-template="search" data-url="/search/autocomplete" >
+            <fieldset>
+                <legend class="rm">Site Search</legend>
+                <input type="text" name="q" autocorrect="off" autocomplete="off" placeholder="Music search" size="26" class="js-search search-box" />
+                <div class="js-search-progress search-progress ir">Loading</div>
+                <input type="hidden" name="from" value="ac" />
+                <button type="submit" class="search-submit icon iconleft iconleft--light iconleft--search" title="Search"></button>
+            </fieldset>
+        </form>
+
+        <nav role="navigation">
+            <ul class="primary-nav remove-bottom-margin">
+                <li class="primary-nav-item">
+                    <a href="/music" class="primary-nav-link">Music</a>
+                </li>
+                                <li class="primary-nav-item">
+                    <a href="/events" class="primary-nav-link">Events</a>
+                </li>
+                <li class="primary-nav-item">
+                    <a href="/charts" class="primary-nav-link">Charts</a>
+                </li>
+                                    <li class="primary-nav-item originals">
+                        <a href="http://originals.last.fm" class="primary-nav-link">Originals</a>
+                    </li>
+                            </ul>
+
+            <div class="masthead-right" role="navigation">
+                                    <a href="/join" class="join" data-analytics-action="SignUpClick" data-analytics-label="Header">Join</a>
+                    <a href="/login" id="login-link" class="btn btn--small btn--header btn--rounded login">Login</a>
+                            </div>
+        </nav>
+    </header>
+
+    </div>
+
+<div id="content" class="clearit listing">
+    
+    <div class="leftCol">
+        <div class="leftColWrapper">
+            <form method="get" id="search">                <h1><label for="search_query">Search music on Last.fm</label></h1>
+                                <input type="text" name="q" class="query" value="Rammstein" id="search_query">
+                
+                <input type="hidden" name="type" value="artist">
+                
+                <input type="submit" value="search">
+                
+                <ul id="searchfilter" class="clearit">
+                        <li class=" first "><a href="/search?q=Rammstein">All Music</a></li>                    <li class=" current "><a href="/search?q=Rammstein&type=artist">Artists</a></li>                    <li><a href="/search?q=Rammstein&type=album">Albums</a></li>                    <li><a href="/search?q=Rammstein&type=track">Tracks</a></li>                    <li><a href="/search?q=Rammstein&type=tag">Tags</a></li>                    <li class="last"><a href="/search?q=Rammstein&type=label">Labels</a></li>                
+</ul>            </form>        </div><!-- .leftColWrapper -->
+    </div><!-- .leftCol -->
+    
+    <div class="rightCol">            
+        <div class="searchmore searchmore-community">
+            <div class="container">
+                <strong><img class="icon act_left_icon" width="20" height="20" src="http://cdn.last.fm/flatness/clear.gif" style="" />Looking for people?</strong>
+                <p>Go to the <a href="/community/users/search?q=Rammstein&amp;m=search">User Search</a> or <a href="/community/groups/search?q=Rammstein">Group Search</a></p>
+            </div>
+        </div>
+        <div class="searchmore searchmore-events">
+            <div class="container">
+                <strong><img class="icon cal_icon" width="13" height="14" src="http://cdn.last.fm/flatness/clear.gif" style="" />Looking for concerts?</strong>
+                <p>Go to the <a href="/events/search?q=Rammstein">Event Search</a></p>
+            </div>
+        </div>
+        
+    </div><!-- .rightCol -->
+    
+             <div class="leftCol">
+     <div class="leftColWrapper">
+                         <div id="LastAd_customsearch" class="LastAd ad-customsearch inactive" data-require="ads/staticadslot" data-ad-static data-ad-placement="customsearch" data-ad-collapsible>
+    <span>     
+            <script src="http://www.google.com/adsense/search/ads.js"></script>
+<div class="google-search-ad" id="google-ads-top-middle" data-require="ads/googlesearchad" data-search-language="en" data-search-query="Rammstein"></div>        
+    </span>
+</div>                            <div id="artistResults" class="results">
+                    <h2 class="heading"><span class="h2Wrapper">Artist results for your search &ldquo;Rammstein&rdquo;</span></h2>                    <ul class="artistsWithInfo">
+    <li  class=" first medium">
+                                                                                                                                                                                        
+                        <a href="/music/Rammstein"     class="artist summary"><span class="pictureFrame pictureFrameMediumsquare"><span class="image"><img height="64" width="64" alt="" src="http://userserve-ak.last.fm/serve/64s/34051577.jpg" /></span><span class="overlay"></span></span><strong>Rammstein</strong></a>                        
+                                                    <p class="stats">
+                                133,368,996 plays (1,577,347 listeners)
+                            </p>
+                                                <p class="bio">
+                                                            Rammstein is a German metal band which was formed in 1994, in Berlin, and consists of Till Lindemann (lead vocals), Richard Kruspe (lead...&hellip;<a href="/music/Rammstein/+wiki"    >read more</a>                                                    </p>
+                        
+                                                                            
+                            <p class="tags"><img class="icon tag_icon" width="14" height="14" src="http://cdn.last.fm/flatness/clear.gif" style="" /><a href="/tag/industrial%20metal"    >industrial metal</a>, <a href="/tag/metal"    >metal</a>, <a href="/tag/industrial"    >industrial</a>, <a href="/tag/german"    >german</a>                            </p>
+                                            
+        </li><li  class=" medium">
+                                                                                                                                                                                        
+                        <a href="/music/T.A.T.U+%252B+Rammstein"     class="artist summary"><span class="pictureFrame pictureFrameMediumsquare"><span class="image"><img height="64" width="64" alt="" src="http://userserve-ak.last.fm/serve/64s/45647749.jpg" /></span><span class="overlay"></span></span><strong>T.A.T.U + Rammstein</strong></a>                        
+                                                    <p class="stats">
+                                170,349 plays (10,734 listeners)
+                            </p>
+                                                <p class="bio">
+                                                            Incorrect tag for t.A.T.u. + Rammstein: Пружинки by Muffin, downloadable from  http://www.maffin.ru/english/mix/tr.htm &hellip;<a href="/music/T.A.T.U+%252B+Rammstein/+wiki"    >read more</a>                                                    </p>
+                        
+                                                                            
+                            <p class="tags"><img class="icon tag_icon" width="14" height="14" src="http://cdn.last.fm/flatness/clear.gif" style="" /><a href="/tag/industrial"    >industrial</a>, <a href="/tag/electronic"    >electronic</a>, <a href="/tag/russian"    >russian</a>, <a href="/tag/mash-up"    >mash-up</a>                            </p>
+                                            
+        </li><li  class=" medium">
+                                                                                                                                                                                        
+                        <a href="/music/t.A.T.u.+&+Rammstein"     class="artist summary"><span class="pictureFrame pictureFrameMediumsquare"><span class="image"><img height="64" width="64" alt="" src="http://userserve-ak.last.fm/serve/64s/2163061.jpg" /></span><span class="overlay"></span></span><strong>t.A.T.u. &amp; Rammstein</strong></a>                        
+                                                    <p class="stats">
+                                79,153 plays (5,716 listeners)
+                            </p>
+                                                <p class="bio">
+                                                            t.A.T.u. + Rammstein is a great mix of russian pop and heavy german industrial metal by Muffin.&hellip;<a href="/music/t.A.T.u.+&+Rammstein/+wiki"    >read more</a>                                                    </p>
+                        
+                                                                            
+                            <p class="tags"><img class="icon tag_icon" width="14" height="14" src="http://cdn.last.fm/flatness/clear.gif" style="" /><a href="/tag/electronic"    >electronic</a>, <a href="/tag/mash-up"    >mash-up</a>, <a href="/tag/german"    >german</a>, <a href="/tag/electronica"    >electronica</a>                            </p>
+                                            
+        </li><li  class=" medium">
+                                                                                                                                                                                        
+                        <a href="/music/t.A.T.u.+%252B+Rammstein"     class="artist summary"><span class="pictureFrame pictureFrameMediumsquare"><span class="image"><img height="64" width="64" alt="" src="http://userserve-ak.last.fm/serve/64s/266019.jpg" /></span><span class="overlay"></span></span><strong>t.A.T.u. + Rammstein</strong></a>                        
+                                                    <p class="stats">
+                                45,271 plays (2,447 listeners)
+                            </p>
+                                                <p class="bio">
+                                                            Not a group, but a mash-up album made of songs from the web site of Muffin. Individuals may want to update their tags accordingly.&hellip;<a href="/music/t.A.T.u.+%252B+Rammstein/+wiki"    >read more</a>                                                    </p>
+                        
+                                                                            
+                            <p class="tags"><img class="icon tag_icon" width="14" height="14" src="http://cdn.last.fm/flatness/clear.gif" style="" /><a href="/tag/mash-up"    >mash-up</a>, <a href="/tag/rock"    >rock</a>, <a href="/tag/industrial"    >industrial</a>, <a href="/tag/metal"    >metal</a>                            </p>
+                                            
+        </li><li  class=" medium">
+                                                                                                                                                                                        
+                        <a href="/music/Cranberries+&+Rammstein"     class="artist summary"><span class="pictureFrame pictureFrameMediumsquare"><span class="image"><img height="64" width="64" alt="" src="http://userserve-ak.last.fm/serve/64s/4971935.jpg" /></span><span class="overlay"></span></span><strong>Cranberries &amp; Rammstein</strong></a>                        
+                                                    <p class="stats">
+                                8,838 plays (2,363 listeners)
+                            </p>
+                                                <p class="bio">
+                                                            This artist does not exist.  The Cranberries and Rammstein have never performed together, or recorded a song.&hellip;<a href="/music/Cranberries+&+Rammstein/+wiki"    >read more</a>                                                    </p>
+                        
+                                                                            
+                            <p class="tags"><img class="icon tag_icon" width="14" height="14" src="http://cdn.last.fm/flatness/clear.gif" style="" /><a href="/tag/gothic"    >gothic</a>, <a href="/tag/brutal%20death%20metal"    >brutal death metal</a>, <a href="/tag/get%20your%20damn%20tags%20right"    >get your damn tags right</a>, <a href="/tag/mistagged%20artist"    >mistagged artist</a>                            </p>
+                                            
+        </li><li  class=" medium">
+                                                                                                                                                                                        
+                        <a href="/music/Rammstein+(%D0%A0%D0%B0%D0%BC%D1%88%D1%82%D0%B0%D0%B9%D0%BD)"     class="artist summary"><span class="pictureFrame pictureFrameMediumsquare"><span class="image"><img class="defaultImage" width="64" alt="" src="http://cdn.last.fm/flatness/catalogue/noimage/2/default_artist_medium.png" /></span><span class="overlay"></span></span><strong>Rammstein (Рамштайн)</strong></a>                        
+                                                    <p class="stats">
+                                3,472 plays (1,745 listeners)
+                            </p>
+                                                <p class="bio">
+                                                            We don’t have a description for this artist yet
+                                                    </p>
+                        
+                                                                    
+        </li><li  class=" medium">
+                                                                                                                                                                                        
+                        <a href="/music/Kmdfm+&+Rammstein"     class="artist summary"><span class="pictureFrame pictureFrameMediumsquare"><span class="image"><img class="defaultImage" width="64" alt="" src="http://cdn.last.fm/flatness/catalogue/noimage/2/default_artist_medium.png" /></span><span class="overlay"></span></span><strong>Kmdfm &amp; Rammstein</strong></a>                        
+                                                    <p class="stats">
+                                5,855 plays (1,408 listeners)
+                            </p>
+                                                <p class="bio">
+                                                            We don’t have a description for this artist yet
+                                                    </p>
+                        
+                                                                            
+                            <p class="tags"><img class="icon tag_icon" width="14" height="14" src="http://cdn.last.fm/flatness/clear.gif" style="" /><a href="/tag/electronic"    >electronic</a>, <a href="/tag/industrial%20metal"    >industrial metal</a>, <a href="/tag/industrial"    >industrial</a>, <a href="/tag/ebm"    >ebm</a>                            </p>
+                                            
+        </li><li  class=" medium">
+                                                                                                                                                                                        
+                        <a href="/music/Rammstein+vs.+Kelly+Clarkson"     class="artist summary"><span class="pictureFrame pictureFrameMediumsquare"><span class="image"><img class="defaultImage" width="64" alt="" src="http://cdn.last.fm/flatness/catalogue/noimage/2/default_artist_medium.png" /></span><span class="overlay"></span></span><strong>Rammstein vs. Kelly Clarkson</strong></a>                        
+                                                    <p class="stats">
+                                5,089 plays (1,370 listeners)
+                            </p>
+                                                <p class="bio">
+                                                            We don’t have a description for this artist yet
+                                                    </p>
+                        
+                                                                    
+        </li><li  class=" medium">
+                                                                                                                                                                                        
+                        <a href="/music/Rammstein+1997+-+Engel+(English+Version)"     class="artist summary"><span class="pictureFrame pictureFrameMediumsquare"><span class="image"><img class="defaultImage" width="64" alt="" src="http://cdn.last.fm/flatness/catalogue/noimage/2/default_artist_medium.png" /></span><span class="overlay"></span></span><strong>Rammstein 1997 - Engel (English Version)</strong></a>                        
+                                                    <p class="stats">
+                                4,839 plays (1,203 listeners)
+                            </p>
+                                                <p class="bio">
+                                                            We don’t have a description for this artist yet
+                                                    </p>
+                        
+                                                                            
+                            <p class="tags"><img class="icon tag_icon" width="14" height="14" src="http://cdn.last.fm/flatness/clear.gif" style="" /><a href="/tag/industrial"    >industrial</a>                            </p>
+                                            
+        </li><li  class=" medium">
+                                                                                                                                                                                        
+                        <a href="/music/%D0%A2%D0%B0%D1%82%D1%83+%D0%98+Rammstein"     class="artist summary"><span class="pictureFrame pictureFrameMediumsquare"><span class="image"><img height="64" width="64" alt="" src="http://userserve-ak.last.fm/serve/64s/88509837.jpg" /></span><span class="overlay"></span></span><strong>Тату И Rammstein</strong></a>                        
+                                                    <p class="stats">
+                                2,767 plays (935 listeners)
+                            </p>
+                                                <p class="bio">
+                                                            We don’t have a description for this artist yet
+                                                    </p>
+                        
+                                                                            
+                            <p class="tags"><img class="icon tag_icon" width="14" height="14" src="http://cdn.last.fm/flatness/clear.gif" style="" /><a href="/tag/rammstein"    >rammstein</a>, <a href="/tag/tatu"    >tatu</a>, <a href="/tag/taty"    >taty</a>                            </p>
+                                            
+        </li><li  class=" medium">
+                                                                                                                                                                                        
+                        <a href="/music/Rammstein+vs.+Fettes+Brot"     class="artist summary"><span class="pictureFrame pictureFrameMediumsquare"><span class="image"><img class="defaultImage" width="64" alt="" src="http://cdn.last.fm/flatness/catalogue/noimage/2/default_artist_medium.png" /></span><span class="overlay"></span></span><strong>Rammstein vs. Fettes Brot</strong></a>                        
+                                                    <p class="stats">
+                                2,585 plays (843 listeners)
+                            </p>
+                                                <p class="bio">
+                                                            We don’t have a description for this artist yet
+                                                    </p>
+                        
+                                                                            
+                            <p class="tags"><img class="icon tag_icon" width="14" height="14" src="http://cdn.last.fm/flatness/clear.gif" style="" /><a href="/tag/german"    >german</a>, <a href="/tag/mtv%20mash"    >mtv mash</a>                            </p>
+                                            
+        </li><li  class=" medium">
+                                                                                                                                                                                        
+                        <a href="/music/T.A.T.U+&+Rammstein"     class="artist summary"><span class="pictureFrame pictureFrameMediumsquare"><span class="image"><img height="64" width="64" alt="" src="http://userserve-ak.last.fm/serve/64s/517613.jpg" /></span><span class="overlay"></span></span><strong>T.A.T.U &amp; Rammstein</strong></a>                        
+                                                    <p class="stats">
+                                12,183 plays (873 listeners)
+                            </p>
+                                                <p class="bio">
+                                                            We don’t have a description for this artist yet
+                                                    </p>
+                        
+                                                                            
+                            <p class="tags"><img class="icon tag_icon" width="14" height="14" src="http://cdn.last.fm/flatness/clear.gif" style="" /><a href="/tag/metal"    >metal</a>                            </p>
+                                            
+        </li><li  class=" medium">
+                                                                                                                                                                                        
+                        <a href="/music/Deutsches+Filmorchester+Babelsberg;+Rammstein"     class="artist summary"><span class="pictureFrame pictureFrameMediumsquare"><span class="image"><img height="64" width="64" alt="" src="http://userserve-ak.last.fm/serve/64s/80035027.png" /></span><span class="overlay"></span></span><strong>Deutsches Filmorchester Babelsberg;…</strong></a>                        
+                                                    <p class="stats">
+                                8,448 plays (731 listeners)
+                            </p>
+                                                <p class="bio">
+                                                            We don’t have a description for this artist yet
+                                                    </p>
+                        
+                                                                            
+                            <p class="tags"><img class="icon tag_icon" width="14" height="14" src="http://cdn.last.fm/flatness/clear.gif" style="" /><a href="/tag/industrial%20metal"    >industrial metal</a>, <a href="/tag/rammstein"    >rammstein</a>, <a href="/tag/neue%20deutsche%20h%C3%A4rte"    >neue deutsche härte</a>                            </p>
+                                            
+        </li><li  class=" medium">
+                                                                                                                                                                                        
+                        <a href="/music/Bushido+&+Rammstein"     class="artist summary"><span class="pictureFrame pictureFrameMediumsquare"><span class="image"><img class="defaultImage" width="64" alt="" src="http://cdn.last.fm/flatness/catalogue/noimage/2/default_artist_medium.png" /></span><span class="overlay"></span></span><strong>Bushido &amp; Rammstein</strong></a>                        
+                                                    <p class="stats">
+                                2,972 plays (730 listeners)
+                            </p>
+                                                <p class="bio">
+                                                            We don’t have a description for this artist yet
+                                                    </p>
+                        
+                                                                    
+        </li><li  class=" medium">
+                                                                                                                                                                                        
+                        <a href="/music/%D0%97%D0%B5%D0%BC%D1%84%D0%B8%D1%80%D0%B0+&+Rammstein"     class="artist summary"><span class="pictureFrame pictureFrameMediumsquare"><span class="image"><img height="64" width="64" alt="" src="http://userserve-ak.last.fm/serve/64s/26899333.png" /></span><span class="overlay"></span></span><strong>Земфира &amp; Rammstein</strong></a>                        
+                                                    <p class="stats">
+                                4,659 plays (653 listeners)
+                            </p>
+                                                <p class="bio">
+                                                            We don’t have a description for this artist yet
+                                                    </p>
+                        
+                                                                            
+                            <p class="tags"><img class="icon tag_icon" width="14" height="14" src="http://cdn.last.fm/flatness/clear.gif" style="" /><a href="/tag/muffin"    >muffin</a>, <a href="/tag/please%20tag%20your%20music%20correctly"    >please tag your music correctly</a>                            </p>
+                                            
+        </li><li  class=" medium">
+                                                                                                                                                                                        
+                        <a href="/music/Rammstein+feat.+Katty+Perry+-+Frei+Heit"     class="artist summary"><span class="pictureFrame pictureFrameMediumsquare"><span class="image"><img class="defaultImage" width="64" alt="" src="http://cdn.last.fm/flatness/catalogue/noimage/2/default_artist_medium.png" /></span><span class="overlay"></span></span><strong>Rammstein feat. Katty Perry - Frei Heit</strong></a>                        
+                                                    <p class="stats">
+                                1,773 plays (615 listeners)
+                            </p>
+                                                <p class="bio">
+                                                            We don’t have a description for this artist yet
+                                                    </p>
+                        
+                                                                    
+        </li><li  class=" medium">
+                                                                                                                                                                                        
+                        <a href="/music/Rammstein+And+Marylin+Manson!"     class="artist summary"><span class="pictureFrame pictureFrameMediumsquare"><span class="image"><img class="defaultImage" width="64" alt="" src="http://cdn.last.fm/flatness/catalogue/noimage/2/default_artist_medium.png" /></span><span class="overlay"></span></span><strong>Rammstein And Marylin Manson!</strong></a>                        
+                                                    <p class="stats">
+                                1,220 plays (556 listeners)
+                            </p>
+                                                <p class="bio">
+                                                            We don’t have a description for this artist yet
+                                                    </p>
+                        
+                                                                    
+        </li><li  class=" medium">
+                                                                                                                                                                                        
+                        <a href="/music/Rammstein+vs+Beastie+Boys"     class="artist summary"><span class="pictureFrame pictureFrameMediumsquare"><span class="image"><img class="defaultImage" width="64" alt="" src="http://cdn.last.fm/flatness/catalogue/noimage/2/default_artist_medium.png" /></span><span class="overlay"></span></span><strong>Rammstein vs Beastie Boys</strong></a>                        
+                                                    <p class="stats">
+                                1,795 plays (451 listeners)
+                            </p>
+                                                <p class="bio">
+                                                            We don’t have a description for this artist yet
+                                                    </p>
+                        
+                                                                    
+        </li><li  class=" medium">
+                                                                                                                                                                                        
+                        <a href="/music/Rammstein+%D0%B8+%D0%A2%D0%B0%D1%82%D1%83"     class="artist summary"><span class="pictureFrame pictureFrameMediumsquare"><span class="image"><img height="64" width="64" alt="" src="http://userserve-ak.last.fm/serve/64s/88509867.jpg" /></span><span class="overlay"></span></span><strong>Rammstein и Тату</strong></a>                        
+                                                    <p class="stats">
+                                1,473 plays (428 listeners)
+                            </p>
+                                                <p class="bio">
+                                                            We don’t have a description for this artist yet
+                                                    </p>
+                        
+                                                                            
+                            <p class="tags"><img class="icon tag_icon" width="14" height="14" src="http://cdn.last.fm/flatness/clear.gif" style="" /><a href="/tag/rammstein"    >rammstein</a>, <a href="/tag/tatu"    >tatu</a>, <a href="/tag/taty"    >taty</a>                            </p>
+                                            
+        </li><li  class=" last medium">
+                                                                                                                                                                                        
+                        <a href="/music/Sixtynine+%252B+Rammstein"     class="artist summary"><span class="pictureFrame pictureFrameMediumsquare"><span class="image"><img height="64" width="64" alt="" src="http://userserve-ak.last.fm/serve/64s/471812.jpg" /></span><span class="overlay"></span></span><strong>Sixtynine + Rammstein</strong></a>                        
+                                                    <p class="stats">
+                                5,474 plays (403 listeners)
+                            </p>
+                                                <p class="bio">
+                                                            We don’t have a description for this artist yet
+                                                    </p>
+                        
+                                                                    
+        </li>
+</ul>                </div>
+                            <div class="pagination"><span class="selected">1</span><a href="/search/overview?q=Rammstein&amp;type=artist&amp;page=2" class="pagelink">2</a><span class="ellipsis">…</span><a href="/search/overview?q=Rammstein&amp;type=artist&amp;page=97" class="pagelink lastpage">97</a><a href="/search/overview?q=Rammstein&amp;type=artist&amp;page=2" class="nextlink" rel="next"><span>Next</span></a></div>                            </div>
+    </div>
+
+<div class="rightCol">
+    <div id="LastAd_mpu" class="LastAd ad-mpu inactive" data-require="ads/staticadslot" data-ad-static data-ad-placement="mpu" data-ad-collapsible>
+    <span>     
+            <div id="mpu_top">
+    <script>
+        googletag.cmd.push(function() {
+            googletag.display("mpu_top"); 
+        });
+    </script>
+</div>        
+    </span>
+</div>    </div>        <div id="LastAd_lowerleaderboard" class="LastAd ad-lowerleaderboard inactive" data-require="ads/staticadslot" data-ad-static data-ad-placement="lowerleaderboard" data-ad-collapsible>
+    <span>     
+            <div id="leader_bottom">
+    <script>
+        googletag.cmd.push(function() {
+            googletag.display("leader_bottom"); 
+        });
+    </script>
+</div>        
+    </span>
+</div></div><!-- #content -->
+
+                
+            </div>
+        </div>
+
+                    <footer role="banner" class="site-footer">
+    <nav class="site-footer-nav">
+        <div class="r add-bottom-margin">
+            <a href="/uploadmusic" class="g call-to-action call-to-action--upload" data-analytics-action="FooterClick" data-analytics-label="Artists and Labels">
+                <h2>Artists and Labels</h2>
+                <p>Connect with fans by uploading your music to Music Manager</p>
+            </a>
+            <a href="/download" class="g call-to-action call-to-action--download" data-analytics-action="FooterClick" data-analytics-label="Download Desktop App">
+                <h2>Download Our Apps</h2>
+                <p>Get the Last.fm apps for desktop and mobile and start scrobbling</p>
+            </a>
+        </div>
+        <hr class="separator" />
+        <ul class="r add-bottom-margin">
+            <li class="g g--padded site-footer-nav-group toggle" data-require="toggle">
+                <h2>Company</h2>
+                <a href="#show-company" class="conditional-footer-toggle js-toggle">
+                    <h2 class="iconright iconright--dropdown">Company</h2>
+                </a>
+                <ul class="toggle-target">
+                    <li><a href="/about" data-analytics-action="FooterClick" data-analytics-label="About us">About us</a></li>
+                    <li><a href="/about/contact" data-analytics-action="FooterClick" data-analytics-label="Contact us">Contact us</a></li>
+                    <li><a href="/about/jobs" data-analytics-action="FooterClick" data-analytics-label="Jobs">Jobs</a></li>
+                    <li><a href="http://blog.last.fm" data-analytics-action="FooterClick" data-analytics-label="Blog">Blog</a></li>
+                    <li><a href="/advertise" data-analytics-action="FooterClick" data-analytics-label="Advertise">Advertise</a></li>
+                </ul>
+                <hr class="separator" role="presentation" />
+            </li>
+            <li class="g g--padded site-footer-nav-group toggle" data-require="toggle">
+                <h2>Join in</h2>
+                <a href="#show-join" class="conditional-footer-toggle js-toggle">
+                    <h2 class="iconright iconright--dropdown">Join in</h2>
+                </a>
+                <ul class="toggle-target">
+                                        <li><a href="/join" data-analytics-action="FooterClick" data-analytics-label="Sign up">Sign up</a></li>
+                    <li><a href="/community/users" data-analytics-action="FooterClick" data-analytics-label="Find people">Find people</a></li>
+                                        <li><a href="/community/groups" data-analytics-action="FooterClick" data-analytics-label="Find groups">Find groups</a></li>
+                    <li><a href="/community" data-analytics-action="FooterClick" data-analytics-label="Community">Community</a></li>
+                    <li><a href="/forum" data-analytics-action="FooterClick" data-analytics-label="Forums">Forums</a></li>
+                </ul>
+                <hr class="separator" role="presentation" />
+            </li>
+            <li class="g g--padded site-footer-nav-group toggle" data-require="toggle">
+                <h2>Goodies</h2>
+                <a href="#show-goodies" class="conditional-footer-toggle js-toggle">
+                    <h2 class="iconright iconright--dropdown">Goodies</h2>
+                </a>
+                <ul class="toggle-target">
+                    <li><a href="/hardware" data-analytics-action="FooterClick" data-analytics-label="More apps">More apps &amp; devices</a></li>
+                    <li><a href="/api" data-analytics-action="FooterClick" data-analytics-label="Last.fm API">Developer API</a></li>
+                    <li><a href="http://build.last.fm" data-analytics-action="FooterClick" data-analytics-label="Tools, plugins & more">Tools &amp; plugins</a></li>
+                    <li><a href="http://playground.last.fm" data-analytics-action="FooterClick" data-analytics-label="Playground">Playground</a></li>
+                    <li><a href="/music/+free-music-downloads" data-analytics-action="FooterClick" data-analytics-label="Free music downloads">Free music downloads</a></li>
+                </ul>
+                <hr class="separator" role="presentation" />
+            </li>
+            <li class="g g--padded site-footer-nav-group toggle" data-require="toggle">
+                <h2>Help</h2>
+                <a href="#show-help" class="conditional-footer-toggle js-toggle">
+                    <h2 class="iconright iconright--dropdown">Help</h2>
+                </a>
+                <ul class="toggle-target">
+                    <li><a href="/help" data-analytics-action="FooterClick" data-analytics-label="Help & support">Help &amp; support</a></li>
+                    <li><a href="http://status.last.fm/" data-analytics-action="FooterClick" data-analytics-label="System status">System status</a></li>
+                                    </ul>
+            </li>
+        </ul>
+    </nav>
+    <hr class="separator" />
+                <nav role="navigation" class="language-selector clearit toggle" id="change-language" data-require="toggle">
+        <h2 class="rm">Languages:</h2>
+        <ul class="inline-items inline-items--dotted">
+            <li class="current-language">
+                <strong class="current-language-text iconleft iconleft--globe">
+                    English
+                    <span class="rm">(current language)</span>
+                </strong>
+                <a href="#show-languages" class="iconleft iconleft--globe iconright iconright--dropdown language-toggle js-toggle">
+                    <strong>English</strong><span class="rm">(current language) — Change language</span>
+                </a>
+            </li>
+            <li class="language-options toggle-target">
+                <ul class="language-options-group">
+                                                                                    <li class="language-option">
+                            <a
+                                href="http://www.lastfm.de/search?q=Rammstein&amp;type=artist&amp;setlang=de"
+                                rel="alternate"
+                                hreflang="de"
+                                data-analytics-action="LanguageSelectorLanguageSelected"
+                                data-analytics-label="en:ua|www.last.fm > de"
+                            >Deutsch</a>
+                        </li>
+                                                                                    <li class="language-option">
+                            <a
+                                href="http://www.lastfm.es/search?q=Rammstein&amp;type=artist&amp;setlang=es"
+                                rel="alternate"
+                                hreflang="es"
+                                data-analytics-action="LanguageSelectorLanguageSelected"
+                                data-analytics-label="en:ua|www.last.fm > es"
+                            >Español</a>
+                        </li>
+                                                                                    <li class="language-option">
+                            <a
+                                href="http://www.lastfm.fr/search?q=Rammstein&amp;type=artist&amp;setlang=fr"
+                                rel="alternate"
+                                hreflang="fr"
+                                data-analytics-action="LanguageSelectorLanguageSelected"
+                                data-analytics-label="en:ua|www.last.fm > fr"
+                            >Français</a>
+                        </li>
+                                                                                    <li class="language-option">
+                            <a
+                                href="http://www.lastfm.it/search?q=Rammstein&amp;type=artist&amp;setlang=it"
+                                rel="alternate"
+                                hreflang="it"
+                                data-analytics-action="LanguageSelectorLanguageSelected"
+                                data-analytics-label="en:ua|www.last.fm > it"
+                            >Italiano</a>
+                        </li>
+                                                                                    <li class="language-option">
+                            <a
+                                href="http://www.lastfm.jp/search?q=Rammstein&amp;type=artist&amp;setlang=jp"
+                                rel="alternate"
+                                hreflang="ja"
+                                data-analytics-action="LanguageSelectorLanguageSelected"
+                                data-analytics-label="en:ua|www.last.fm > jp"
+                            >日本語</a>
+                        </li>
+                                                                                    <li class="language-option">
+                            <a
+                                href="http://www.lastfm.pl/search?q=Rammstein&amp;type=artist&amp;setlang=pl"
+                                rel="alternate"
+                                hreflang="pl"
+                                data-analytics-action="LanguageSelectorLanguageSelected"
+                                data-analytics-label="en:ua|www.last.fm > pl"
+                            >Polski</a>
+                        </li>
+                                                                                    <li class="language-option">
+                            <a
+                                href="http://www.lastfm.com.br/search?q=Rammstein&amp;type=artist&amp;setlang=pt"
+                                rel="alternate"
+                                hreflang="pt"
+                                data-analytics-action="LanguageSelectorLanguageSelected"
+                                data-analytics-label="en:ua|www.last.fm > pt"
+                            >Português</a>
+                        </li>
+                                                                                    <li class="language-option">
+                            <a
+                                href="http://www.lastfm.ru/search?q=Rammstein&amp;type=artist&amp;setlang=ru"
+                                rel="alternate"
+                                hreflang="ru"
+                                data-analytics-action="LanguageSelectorLanguageSelected"
+                                data-analytics-label="en:ua|www.last.fm > ru"
+                            >Руccкий</a>
+                        </li>
+                                                                                    <li class="language-option">
+                            <a
+                                href="http://www.lastfm.se/search?q=Rammstein&amp;type=artist&amp;setlang=sv"
+                                rel="alternate"
+                                hreflang="sv"
+                                data-analytics-action="LanguageSelectorLanguageSelected"
+                                data-analytics-label="en:ua|www.last.fm > sv"
+                            >Svenska</a>
+                        </li>
+                                                                                    <li class="language-option">
+                            <a
+                                href="http://www.lastfm.com.tr/search?q=Rammstein&amp;type=artist&amp;setlang=tr"
+                                rel="alternate"
+                                hreflang="tr"
+                                data-analytics-action="LanguageSelectorLanguageSelected"
+                                data-analytics-label="en:ua|www.last.fm > tr"
+                            >Türkçe</a>
+                        </li>
+                                                                                    <li class="language-option">
+                            <a
+                                href="http://cn.last.fm/search?q=Rammstein&amp;type=artist&amp;setlang=zh"
+                                rel="alternate"
+                                hreflang="zh"
+                                data-analytics-action="LanguageSelectorLanguageSelected"
+                                data-analytics-label="en:ua|www.last.fm > zh"
+                            >简体中文</a>
+                        </li>
+                                                        </ul>
+            </li>
+        </ul>
+        <hr class="separator" />
+    </nav>
+
+     
+<div class="site-footer-legalese">
+    <blockquote class="site-footer-strapline">“Sweet as the Moment When the Last.fm Went 'Pop'”</blockquote>
+    <ul class="inline-items inline-items--dotted">
+        <li>
+            <a href="http://www.cbsinteractive.com">CBS Interactive</a> &copy; 2013 Last.fm Ltd. All&nbsp;rights&nbsp;reserved        </li>
+        <li>
+            <a href="/legal/terms" data-analytics-action="FooterClick" data-analytics-label="Terms of Use">Terms of Use</a>,
+            <a href="/legal/privacy" data-analytics-action="FooterClick" data-analytics-label="Privacy Policy">Privacy Policy</a> and
+            <a href="/legal" data-analytics-action="FooterClick" data-analytics-label="Legal">Legal Policies</a> —
+            <span class="date">Updated 15 Jan 2013</span>
+        </li>
+        <li>
+            <a href="http://www.gamespot.com">Gamespot</a>
+        </li>
+    </ul>
+        </div></footer>            
+    <div id="multiButtonMenu" style="display: none;">
+    <div>
+        <ul class="lfmDropDownBody">
+            <li class="mAddToLibrary"><a href="#">Add to my Library</a></li>
+            <li class="mAddToFriends"><a href="#">Add to Friends</a></li>
+            
+            <!-- <li class="save"><a href="#">Bookmark</a></li> -->
+            <li class="mSend"><a href="#">Share</a></li>
+            
+            <li class="mLove"><a href="#">Love this track</a></li>
+            <li class="mUnlove"><a href="#">Unlove track</a></li>
+            <li class="mBan"><a href="#">Ban track from radio</a></li>
+            <li class="mUnban"><a href="#">Unban track from radio</a></li>
+
+            <li class="mAddTags"><a href="#">Add tags</a></li>
+            <li class="mAddToPlaylist"><a href="#">Add to playlist</a></li>
+            
+            <li class="mRemoveFromLibrary"><a href="#">Remove from your Library</a></li>
+            
+            <li class="mBuy"><a href="#">Buy Track</a></li>
+                        <li class="mMessage"><a href="#">Send a message</a></li>
+                        <li class="mEditDetails"><a href="#">Edit Details</a></li>
+            <li class="mMessageAll"><a href="#">Message All Users</a></li>
+            <li class="mEditPermissions"><a href="#">Edit Permissions</a></li>
+            <li class="mAbdicate"><a href="#">Abdicate</a></li>
+            <li class="mLeave"><a href="#">Leave Group</a></li>
+            
+            <li class="mLoading"><a href="#">&nbsp;</a></li>
+        </ul>
+    </div>
+</div>
+
+
+
+<div style="display: none">
+    <script src="//dw.cbsimg.net/js/cbsi/dw.js"></script>
+    <script>
+        if (typeof DW === "object") {
+            DW.pageParams = {
+                siteid: '190',
+                ptid: '6056'
+            };
+            DW.tagNielsen = false;
+            DW.clear();
+        }
+    </script>
+    <noscript>
+        <img src="//dw.cbsimg.net/clear/c.gif?ts=1384200953&amp;sid=190;" />
+    </noscript>
+</div>
+
+
+
+<script src="http://cdn.last.fm/javascript/javascript/229047/lib/omniture/s_code_tm.js"></script>
+<script>
+if(s){s.t()};
+</script>
+<script>
+LFM.Button.MultiButton.setup();
+LFM.Display.setMinHeight();
+</script>
+
+<div id="fb-root"></div>
+    
+    
+    <script src="http://cn.cbsimg.net/cnwk.1d/Aud/javascript/last/apex.js"></script>
+    <script>
+        var cbsiApexGlobal = {
+                    'SITE' : '190',
+                    'PTYPE' : '2000'
+                  };
+        if (typeof cbsiRunApexTargets === "function") {
+            cbsiRunApexTargets(cbsiApexGlobal, 1000);
+        }
+    </script>
+
+        
+    <script>
+    window.ClickTaleSettings = { XHRWrapper: { Enable: true} };
+    document.write(unescape("%3Cscript%20src='" +
+(document.location.protocol == 'https:' ?
+  'https://clicktalecdn.sslcs.cdngc.net/' :
+  'http://cdn.clicktale.net/') +
+"www09/ptc/220b3951-66a2-4b8e-ac35-fa58bfb30846.js'%3E%3C/script%3E"));
+
+    </script>
+    
+
+    
+                    
+    </body>
+</html>
