@@ -23,18 +23,16 @@ from fms.server.utils import json_utils
 from fms.server.utils import log_utils
 from fms.server.exceptions import BaseFMSException, InnerServerError
 
-#TODO init context
-LOGGER_CONFIG_FILE = "*"
 
-log_utils.init_logger(LOGGER_CONFIG_FILE)
+class WrappedFlask(Flask):
+    def run(self, host=None, port=None, debug=None, **options):
+        log_utils.init_logger("*")
 
+        super(WrappedFlask, self).run(host, port, debug, **options)
 
-SEARCH_ARTIST_HANDLER = handlers.SearchArtistHandler(None)
-SEARCH_ALBUMS_HANDLER = handlers.SearchAlbumsHandler(None)
-SEARCH_SONGS_HANDLER = handlers.SearchSongsHandler(None)
 
 LOG = logging.getLogger(__name__)
-app = Flask(__name__)
+app = WrappedFlask(__name__)
 
 
 @app.route("/test")
@@ -44,17 +42,17 @@ def test():
 
 @app.route("/artists.search")
 def search_artist():
-    return safe_handle(SEARCH_ARTIST_HANDLER, request.args)
+    return safe_handle(handlers.SearchArtistHandler(None), request.args)
 
 
 @app.route("/albums.search")
 def search_albums():
-    return safe_handle(SEARCH_ALBUMS_HANDLER, request.args)
+    return safe_handle(handlers.SearchAlbumsHandler(None), request.args)
 
 
 @app.route("/songs.search")
 def search_songs():
-    return safe_handle(SEARCH_SONGS_HANDLER, request.args)
+    return safe_handle(handlers.SearchSongsHandler(None), request.args)
 
 
 def safe_handle(handler, args):
