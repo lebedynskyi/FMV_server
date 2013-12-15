@@ -24,20 +24,19 @@ from fms.server.utils import log_utils
 from fms.server.exceptions import BaseFMSException, InnerServerError
 
 
-class WrappedFlask(Flask):
-    def run(self, host=None, port=None, debug=None, **options):
-        super(WrappedFlask, self).run(host, port, debug, **options)
-
-        log_utils.init_logger("*")
-        LOG.warning("Logger configured")
-
-
+log_utils.init_logger("*")
 LOG = logging.getLogger()
-app = WrappedFlask(__name__)
+app = Flask(__name__)
+
 
 
 @app.route("/test")
 def test():
+    LOG.debug("TEST PAGE called")
+    LOG.info("TEST PAGE called")
+    LOG.warning("TEST PAGE called")
+    LOG.error("TEST PAGE called")
+    LOG.critical("TEST PAGE called")
     return "TEST PAGE"
 
 
@@ -64,7 +63,3 @@ def safe_handle(handler, args):
         if not isinstance(e, BaseFMSException):
             LOG.exception(e)
         return json_utils.to_json("error", InnerServerError(e.message))
-
-
-def start():
-    pass
