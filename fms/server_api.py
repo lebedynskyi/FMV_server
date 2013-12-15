@@ -27,13 +27,13 @@ from fms.server.exceptions import BaseFMSException, InnerServerError
 class WrappedFlask(Flask):
     def run(self, host=None, port=None, debug=None, **options):
         log_utils.init_logger("*")
-
         super(WrappedFlask, self).run(host, port, debug, **options)
 
 
 LOG = logging.getLogger(__name__)
 app = WrappedFlask(__name__)
 
+LOG.warning("FMS SERVER BY Vetalll")
 
 @app.route("/test")
 def test():
