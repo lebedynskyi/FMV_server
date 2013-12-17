@@ -21,9 +21,11 @@ class BaseFMSException(BaseException):
 
 class RequiredValueException(BaseFMSException):
     def __init__(self, value):
-        super(RequiredValueException, self).__init__("%s is required" % value)
+        super(RequiredValueException, self).__init__(
+            "%s is required and cannot be empty" % value)
 
 
 class InnerServerError(BaseException):
     def __init__(self, value):
-        super(InnerServerError, self).__init__("Inner server error, %s"% value)
+        super(InnerServerError, self).__init__(
+            "Inner server error, %s" % value)

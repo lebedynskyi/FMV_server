@@ -14,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 import logging
+import time
 
 from flask import Flask
 from flask import request
@@ -29,7 +30,6 @@ LOG = logging.getLogger()
 app = Flask(__name__)
 
 
-
 @app.route("/test")
 def test():
     LOG.debug("TEST PAGE called")
@@ -42,24 +42,31 @@ def test():
 
 @app.route("/artists.search")
 def search_artist():
-    return safe_handle(handlers.SearchArtistHandler(None), request.args)
+    return _safe_handle(handlers.SearchArtistHandler(None), request.args)
 
 
 @app.route("/albums.search")
 def search_albums():
-    return safe_handle(handlers.SearchAlbumsHandler(None), request.args)
+    return _safe_handle(handlers.SearchAlbumsHandler(None), request.args)
 
 
 @app.route("/songs.search")
 def search_songs():
-    return safe_handle(handlers.SearchSongsHandler(None), request.args)
+    return _safe_handle(handlers.SearchSongsHandler(None), request.args)
 
 
-def safe_handle(handler, args):
+def _safe_handle(handler, args):
     try:
+        start_time = time.time()
         rez = handler.handle(args)
-        return json_utils.to_json("response", rez)
+        request_time = time.time() - start_time
+
+        return json_utils.to_json("response", rez, time=request_time)
     except BaseException as e:
         if not isinstance(e, BaseFMSException):
             LOG.exception(e)
         return json_utils.to_json("error", InnerServerError(e.message))
+
+
+if __name__ == "__main__":
+    app.run("0.0.0.0", port=6985)

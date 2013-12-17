@@ -25,7 +25,9 @@ class SearchSong(JsonSerializable):
         self.url = None
         self.bitrate = None
         self.size = None
+        self.length = None
         self.url_for = "http://pleer.com/site_api/files/get_url?id="
 
     def get_values_keys(self):
-        return ["name", "artist", "id", "url", "bitrate", "size", "url_for"]
+        return ["name", "artist", "id", "url", "bitrate", "size", "url_for",
+                "length"]

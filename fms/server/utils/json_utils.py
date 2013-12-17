@@ -18,8 +18,13 @@
 import json
 
 
-def to_json(key, value):
-    return json.dumps({key: value}, allow_nan=False, cls=ResponseEncoder)
+def to_json(key, value, **kwargs):
+    d = {key: value}
+
+    if kwargs:
+        d.update(kwargs)
+
+    return json.dumps(d, allow_nan=False, cls=ResponseEncoder)
 
 
 class JsonSerializable(object):

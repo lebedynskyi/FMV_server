@@ -34,6 +34,7 @@ class SearchAlbum(json_utils.JsonSerializable):
         self.name = None
         self.artist = None
         self.descr = None
+        self.image = None
 
     def get_values_keys(self):
-        return ["url", "name", "artist", "descr"]
+        return ["url", "name", "artist", "descr", "image"]

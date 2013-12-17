@@ -48,11 +48,20 @@ def parse_one(node):
     if summary_block is not None:
         if hasattr(summary_block, "attrs") and "href" in summary_block.attrs:
             album.url = summary_block.attrs["href"]
-        album.name = summary_block.text
+        album.name = summary_block.text.strip()
 
     artist_block = node.find("a", {"class": "artist"})
     if artist_block is not None:
         album.artist = artist_block.text
 
+    image_block = summary_block.find("img", {"class": "albumCover"})
+    if image_block is not None:
+        if hasattr(image_block, "attrs") and "src" in image_block.attrs:
+            album.image = image_block.attrs["src"]
+
+    descr_block = node.find("p", {"class": "stats"})
+    if descr_block is not None:
+        hacked_values = descr_block.text.split()
+        album.descr = " ".join(hacked_values)
 
     return album

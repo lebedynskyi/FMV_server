@@ -35,19 +35,20 @@ def parse(json_response):
 def parse_songs(songs_json):
     songs = []
     for j in songs_json:
-       songs.append(parse_one(j))
+        songs.append(parse_one(j))
     return songs
 
 
-def parse_one(j):
+def parse_one(jsonSong):
     song = SearchSong()
 
-    song.name = j["track"]
-    song.artist = j["artist"]
-    song.id = j["id"]
-    song.url = j["file"]
-    song.bitrate = j["bitrate"]
-    song.size = j["size"]
+    song.name = jsonSong["track"]
+    song.artist = jsonSong["artist"]
+    song.id = jsonSong["id"]
+    song.url = jsonSong["file"]
+    song.bitrate = jsonSong["bitrate"]
+    song.size = jsonSong["size"]
+    song.length = jsonSong["length"]
     return song
 
 

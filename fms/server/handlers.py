@@ -24,6 +24,7 @@ LAST_FM_SEARCH = "http://last.fm/search"
 PLEER_DOT_COM_URL = "http://pleer.com/browser-extension/search"
 
 
+#TODO remove constructors and create getters for data
 class BaseHandler(object):
     def __init__(self, manager):
         self.manager = manager
@@ -50,7 +51,7 @@ class BaseHandler(object):
 
     def check_required_params(self, params):
         for p in self.required_params:
-            if p not in params:
+            if p not in params or not params[p]:
                 raise RequiredValueException(p)
 
     def _handle_request(self, params):
