@@ -18,6 +18,7 @@ import time
 
 from flask import Flask
 from flask import request
+from flask import make_response
 
 from fms.server import handlers
 from fms.server.utils import json_utils
@@ -59,9 +60,14 @@ def _safe_handle(handler, args):
     try:
         start_time = time.time()
         rez = handler.handle(args)
+        json_response = json_utils.to_json("response", rez)
+
         request_time = time.time() - start_time
 
-        return json_utils.to_json("response", rez, time=request_time)
+        response = make_response(json_response)
+        response.headers['Request-time'] = str(request_time)
+
+        return response
     except BaseException as e:
         if not isinstance(e, BaseFMSException):
             LOG.exception(e)
