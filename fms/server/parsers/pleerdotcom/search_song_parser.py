@@ -28,7 +28,6 @@ def parse(json_response):
     songs_count = data.pop("found", None)
     songs_json = data.pop("tracks", None)
     songs = parse_songs(songs_json)
-    songs_page_count = songs_count / len(songs_json)
     return songs
 
 

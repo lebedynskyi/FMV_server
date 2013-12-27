@@ -57,7 +57,7 @@ def parse_one(node):
 
     #getting brief description
     bio_block = node.find("p", {"class": "bio"})
-    artist_model.descr = bio_block.text.strip()[:-9]
+    artist_model.descr = bio_block.text.strip()
 
     #getting url on image
     image_block = node.find("img")

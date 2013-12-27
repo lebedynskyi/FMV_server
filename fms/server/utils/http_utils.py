@@ -30,12 +30,14 @@ def do_get(url, params=None):
     for k in headers.keys():
         req.add_header(k, headers[k])
 
+    f = None
     try:
         f = urllib2.urlopen(req)
         response = f.read()
         return response
     finally:
-        f.close()
+        if f is not None:
+            f.close()
 
 
 def get_random_headers():
@@ -49,15 +51,12 @@ def generate_url(base_url, params):
 
     count = 0
     for k in params.keys():
-        if count == 0:
-            divider = "?"
-        else:
-            divider = "&"
+        divider = "?" if count == 0 else "&"
         count += 1
         value = params[k]
         if value is None:
             continue
-        base_url += divider + k + "=" + url_fix(str(value))
+        base_url += divider + url_fix(k) + "=" + url_fix(value)
     return base_url
 
 
